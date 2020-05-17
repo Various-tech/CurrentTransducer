@@ -1,0 +1,28 @@
+t1 = linspace(-108000,-5000,500);
+t2 = linspace(5000,108000,500);
+ 
+U_c1 = 4.75;
+U_c2 = 5;
+U_c3 = 5.25;
+V_o = 2.5;
+G = 6.667*10^(-3);
+I_p11 = t1/399;
+I_p12 = t2/399;
+V_Out1 = (U_c1/5)*(V_o+G*I_p11);
+V_Out2 = (U_c2/5)*(V_o+G*I_p11);
+V_Out3 = (U_c3/5)*(V_o+G*I_p11);
+V_Out4 = (U_c1/5)*(V_o+G*I_p12);
+V_Out5 = (U_c2/5)*(V_o+G*I_p12);
+V_Out6 = (U_c3/5)*(V_o+G*I_p12);
+
+plot(t1,V_Out1,'c--');
+hold on
+plot(t1,V_Out2, 'g:');
+plot(t1,V_Out3, 'b-.');
+plot(t2,V_Out4,'c--');
+plot(t2,V_Out5, 'g:');
+plot(t2,V_Out6, 'b-.');
+hold off
+xlabel('Power in W');
+ylabel('V_O_u_t');
+legend('V_O_u_t_1','V_O_u_t_2', 'V_O_u_t_3');
